@@ -38,17 +38,17 @@ En segundo lugar, se descarga el dataset y se deposita la carpeta `CICIoT2023`, 
 Una vez creado el directorio de trabajo, se ejecuta:
 
 ```bash
-> python3 unir.py
+python3 unir.py
 ```
 En este fichero se une el número de archivos csv indicados en el código, generando “muestra.csv”.
 El siguiente paso es ejecutar:
 ```bash
-> python3 filtro.py
+python3 filtro.py
 ```
 Se preprocesan los datos, se calcula la información mutua y por último se entrena el árbol de decisión.
 Finalmente, en el fichero ontología.py, modificando previamente la dirección del directorio donde se encuentre el archivo.rdf, tanto en la décima como última línea del código, se ejecuta:
 ```bash
-> python3 ontología.py
+python3 ontología.py
 ```
 Se carga la ontología en el archivo indicado y se genera un fichero PDF.
 Si se abre el archivo.rdf con Protégé, se podrá observar las clases creadas, relaciones, atributos e instancias generadas.
