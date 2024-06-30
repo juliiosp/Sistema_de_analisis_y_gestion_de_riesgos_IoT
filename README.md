@@ -1,7 +1,8 @@
 # Desarrollo de un sistema de análisis y gestión de riesgos en entornos IoT.
 
-## Julio Sánchez-Pajares Aliseda
-## GITST - ETSIT UPM
+**Julio Sánchez-Pajares Aliseda**
+
+**GITST - ETSIT UPM**
 
 # Requisitos
 Para ejecutar el siguiente código hay que instalar las siguientes librerías:
@@ -32,9 +33,24 @@ Este fichero es una particularización del anterior. Se trata del ejemplo que se
 
 Para la ejecución del código es necesario, en primer lugar, la creación de un directorio con un nombre cualquiera. Posteriormente, se descargan los ficheros alojados en GitHub y se depositan en el directorio creado. Cabe mencionar que el archivo `casodeuso.py` es el usado para la validación mostrada en esta memoria, por lo que es opcional su ejecución.
 
-En segundo lugar, se descarga el dataset [45] y se deposita la carpeta `CICIoT2023`, que es donde se encuentran los ficheros CSV, en el directorio de trabajo. Por último, es necesario crear una ontología vacía. Para esto es suficiente con abrir Protégé, crear una ontología y guardarla, de manera que se cree en el directorio de trabajo un archivo `.rdf`. Así, el código podrá encontrar el archivo y cargar los datos.
+En segundo lugar, se descarga el dataset y se deposita la carpeta `CICIoT2023`, que es donde se encuentran los ficheros CSV, en el directorio de trabajo. Por último, es necesario crear una ontología vacía. Para esto es suficiente con abrir Protégé, crear una ontología y guardarla, de manera que se cree en el directorio de trabajo un archivo `.rdf`. Así, el código podrá encontrar el archivo y cargar los datos.
 
 Una vez creado el directorio de trabajo, se ejecuta:
 
 ```bash
 > python3 unir.py
+```
+En este fichero se une el número de archivos csv indicados en el código, generando “muestra.csv”.
+El siguiente paso es ejecutar:
+```bash
+> python3 filtro.py
+```
+Se preprocesan los datos, se calcula la información mutua y por último se entrena el árbol de decisión.
+Finalmente, en el fichero ontología.py, modificando previamente la dirección del directorio donde se encuentre el archivo.rdf, tanto en la décima como última línea del código, se ejecuta:
+```bash
+> python3 ontología.py
+```
+Se carga la ontología en el archivo indicado y se genera un fichero PDF.
+Si se abre el archivo.rdf con Protégé, se podrá observar las clases creadas, relaciones, atributos e instancias generadas.
+
+
